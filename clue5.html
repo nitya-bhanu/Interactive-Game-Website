@@ -207,6 +207,7 @@
       const username = params.user;
       const url = "https://scaredaccomplishedapplications.nityabhanu.repl.co";
       function sendTime() {
+        console.log("send time called",this.moves);
         const user = {
           name: username,
           LogicalAbility: this.moves,
@@ -229,7 +230,7 @@
         modal.style.display = "block";
         x = document.querySelector(".gamehead");
         x.textContent = "Please wait while you are redirected to the treasure, Copy Your Key: pqWasd@01"
-        setTimeout(sendTime,7000)
+        setTimeout(sendTime(),7000)
       }
 
       document.getElementById("demo").addEventListener("click", myFunction);
