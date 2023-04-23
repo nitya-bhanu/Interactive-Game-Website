@@ -23,12 +23,12 @@
     </div>
     <div id="winning_display"></div>
     <div>
-        <p id="s1">Eye Hand Coordination </p>
-        <p id="s2">General AwarenessScore </p>
-        <p id="s3">Listening Abilities </p>
-        <p id="s4">Logical Ability </p>
-        <p id="s5">Mathematical skills </p>
-        <p id="s6">Picture Perception </p>
+        <p id="s1"></p>
+        <p id="s2"></p>
+        <p id="s3"></p>
+        <p id="s4"></p>
+        <p id="s5"></p>
+        <p id="s6"></p>
     </div>
         
     <script>
@@ -44,12 +44,12 @@
                 .post(url + "/player/getuser", user)
                 .then((response) => {
                     console.log(response.data);
-                    document.getElementById('s1').innerHTML+=response.data.EyeHandCoordination
-                    document.getElementById('s2').innerHTML+=response.data.GeneralAwarenessScore
-                    document.getElementById('s3').innerHTML+=response.data.ListeningAbilities
-                    document.getElementById('s4').innerHTML+=response.data.LogicalAbility
-                    document.getElementById('s5').innerHTML+=response.data.Mathematicalskills
-                    document.getElementById('s6').innerHTML+=response.data.PicturePerception
+                    document.getElementById('s1').innerHTML='Eye Hand Coordination: '+response.data.EyeHandCoordination
+                    document.getElementById('s2').innerHTML='General AwarenessScore: '+response.data.GeneralAwarenessScore
+                    document.getElementById('s3').innerHTML='Listening Abilities: '+response.data.ListeningAbilities
+                    document.getElementById('s4').innerHTML='Logical Ability: '+response.data.LogicalAbility
+                    document.getElementById('s5').innerHTML='Mathematical skills: '+response.data.Mathematicalskills
+                    document.getElementById('s6').innerHTML='Picture Perception: '+response.data.PicturePerception
                 })
                 .catch((error) => console.error(error));
         }
