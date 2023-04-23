@@ -23,6 +23,28 @@ function generate() {
     captcha.innerHTML = uniquechar;
 }
 
+const urlSearchParams = new URLSearchParams(window.location.search);
+const params = Object.fromEntries(urlSearchParams.entries());
+const username = params.user;
+const url = "https://scaredaccomplishedapplications.nityabhanu.repl.co";
+function sendTime() {
+    console.log(timeset);
+    const user = {
+        name: username,
+        PicturePerception: timeset,
+    };
+    axios
+        .post(url + "/player/update", user)
+        .then((response) => {
+            console.log(response.data);
+            window.open(
+                "https://nitya-bhanu.github.io/elitmusFrontEnd/clue5.html?user=" +
+                username,
+                "_self"
+            );
+        })
+        .catch((error) => console.error(error));
+}
 function printmsg() {
     const usr_input = document
         .getElementById("submit").value;
@@ -30,8 +52,7 @@ function printmsg() {
     // Check whether the input is equal
     // to generated captcha or not
     if (usr_input == captcha.innerHTML) {
-        var s = document.getElementById("key")
-            .innerHTML = "Copy the following link to go to next clue: http://127.0.0.1:5501/clue5.html";
+        sendTime();
         generate();
     }
     else {

@@ -19,22 +19,23 @@
 
   <body>
     <h1>Welcome to e-litmus Gaming website</h1>
-    <div id="my-signin2" onclick="loginRedirect()">Sign in</div>
+    <input id="username" type="text" placeholder="Enter Username" />
+    <div id="sign" onclick="signin()">Sign in</div>
     <script>
       const url = "https://scaredaccomplishedapplications.nityabhanu.repl.co";
-      function loginRedirect() {
-        window.open(url + "/auth/google/callback", "_self");
-      }
-      function getUser() {
+      function signin() {
+        const username = document.getElementById("username").value;
+        const user = {
+          name: username,
+        };
         axios
-          .get(url+"/auth/loginStatus",{withCredentials:true})
+          .post(url + "/player/signin", user)
           .then((response) => {
-            const users = response.data;
-            console.log(`GET users`, users);
+            console.log(response.data);
+            window.open("https://nitya-bhanu.github.io/bounce-ball/index.html?user="+username, "_self");
           })
           .catch((error) => console.error(error));
       }
-      getUser()
     </script>
 
     <script

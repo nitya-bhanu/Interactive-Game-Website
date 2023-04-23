@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=\, initial-scale=1.0">
     <link rel="stylesheet" href="clue3.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Document</title>
 </head>
 
@@ -30,7 +31,7 @@
     <a href="#" target="_blank">
         <p id="opt1">an intensive, stop it till</p>
     </a>
-    <a href="clue4.html" target="_blank">
+    <a onclick="sendTime()" target="_blank">
         <p id="opt2">an expensive, stop it until</p>
     </a>
     <a href="#" target="_blank">
@@ -54,6 +55,30 @@
                 timeset++;
                 timeUpdate.innerText = 'Time elapsed: ' + timeset;
             }, 100);
+        }
+
+         //sending the time data
+         const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+        const username = params.user;
+        const url = "https://scaredaccomplishedapplications.nityabhanu.repl.co";
+        function sendTime() {
+            console.log(timeset);
+            const user = {
+                name: username,
+                ListeningAbilities: timeset,
+            };
+            axios
+                .post(url + "/player/update", user)
+                .then((response) => {
+                    console.log(response.data);
+                    window.open(
+                        "https://nitya-bhanu.github.io/elitmusFrontEnd/clue4.html?user=" +
+                        username,
+                        "_self"
+                    );
+                })
+                .catch((error) => console.error(error));
         }
     </script>
 </body>

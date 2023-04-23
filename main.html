@@ -7,32 +7,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
     <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
     <h1>
         Welcome to the interactive treasure hunt website
-        Come back here once you are asked to open this treasure box
+        Now please enter the key you've found our treasure hunter
     </h1>
-    <a href="clue1.html" target="_blank">Click here for clue</a>
     <img src="treasure_box.png" alt="treasure box">
     <div class="taking_key">
-        Enter key carefully, this box opens only once in 100 years:  <input type="text" id="myText" value="Enter key">
+        Enter key carefully, this box opens only once in 100 years:  <input type="text" id="myText" placeholder="Enter key">
         <button type="button" onclick="myFunction()">Submit</button>
         <p id="demo"></p>
     </div>
     <div id="winning_display"></div>
+    <div>
+        <p id="s1">Eye Hand Coordination </p>
+        <p id="s2">General AwarenessScore </p>
+        <p id="s3">Listening Abilities </p>
+        <p id="s4">Logical Ability </p>
+        <p id="s5">Mathematical skills </p>
+        <p id="s6">Picture Perception </p>
+    </div>
+        
     <script>
+         const urlSearchParams = new URLSearchParams(window.location.search);
+        const params = Object.fromEntries(urlSearchParams.entries());
+        const username = params.user;
+        const url = "https://scaredaccomplishedapplications.nityabhanu.repl.co";
+        function getScore() {
+            const user = {
+                name: username,
+            };
+            axios
+                .post(url + "/player/getuser", user)
+                .then((response) => {
+                    console.log(response.data);
+                    document.getElementById('s1').innerHTML+=response.data.EyeHandCoordination
+                    document.getElementById('s2').innerHTML+=response.data.GeneralAwarenessScore
+                    document.getElementById('s3').innerHTML+=response.data.ListeningAbilities
+                    document.getElementById('s4').innerHTML+=response.data.LogicalAbility
+                    document.getElementById('s5').innerHTML+=response.data.Mathematicalskills
+                    document.getElementById('s6').innerHTML+=response.data.PicturePerception
+                })
+                .catch((error) => console.error(error));
+        }
         function myFunction() {
             var x = document.getElementById("myText").value;
             if (x === 'pqWasd@01')
                 {
                     var y = document.getElementById("winning_display");
                     y.innerText='Congratulations you won!'
+                    getScore()
                 }
             else
                 console.log('Oops Try again');
         }
+        
     </script>
 </body>
 

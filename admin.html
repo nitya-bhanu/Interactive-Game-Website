@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <h1>Admin Dashboard</h1>
+    <input id="username" type="text" placeholder="Enter Admin Username" />
+    <input id="password" type="text" placeholder="Enter Admin Password" />
+    <div id="sign" onclick="signin()">Sign in</div>
+    <div id="users"></div>
+    <script>
+      const url = "https://scaredaccomplishedapplications.nityabhanu.repl.co";
+      function signin() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        if (username === "a" && password === "a") {
+          axios
+            .post(url + "/player/getAll")
+            .then((response) => {
+              console.log(response.data);
+              for (var i = 0; i < response.data.length; i++) {
+                const div1 = document.createElement("div");
+                div1.innerHTML = `<p>${response.data[i].name} ${response.data[i].EyeHandCoordination}</p>`
+                document.getElementById("users").appendChild(div1);
+              }
+            })
+            .catch((error) => console.error(error));
+        } else {
+          alert("Wrong username or password");
+        }
+      }
+    </script>
+  </body>
+</html>
