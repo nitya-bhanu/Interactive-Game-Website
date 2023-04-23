@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="clue3.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Clue 3</h1>
+    <p>
+        Listen to the song and solve the following question
+    </p>
+    <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/5PxYt0qsqecwUJN3lFtTVU?utm_source=generator" width="100%" height="352"
+        frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <p>What ................... fake</p>
+    <iframe style="border-radius:12px"
+        src="https://open.spotify.com/embed/track/6FfLg6FFqhCsrFOaHIGkg0?utm_source=generator" width="100%" height="352"
+        frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    <p>And I won't ........... you're my girl</p>
+    <p>
+        Select the correct option
+    </p>
+    <a href="#" target="_blank">
+        <p id="opt1">an intensive, stop it till</p>
+    </a>
+    <a href="clue4.html" target="_blank">
+        <p id="opt2">an expensive, stop it until</p>
+    </a>
+    <a href="#" target="_blank">
+        <p id="opt3">a sake, stop it until</p>
+    </a>
+    <a href="#" target="_blank">
+        <p id="opt4">a expensive, stop till</p>
+    </a>
+    <div id="time-frame">Time elapsed:0</div>
+    <a href="clue1.html" target="_blank">
+        <p class="start-over">Start Over</p>
+    </a>
+
+    <!-- embedding javascript here -->
+    <script>
+        let timeset = 0;
+        window.addEventListener("load", MyFunction());
+        function MyFunction() {
+            var timeUpdate = document.getElementById('time-frame')
+            setInterval(() => {
+                timeset++;
+                timeUpdate.innerText = 'Time elapsed: ' + timeset;
+            }, 100);
+        }
+    </script>
+</body>
+</html>

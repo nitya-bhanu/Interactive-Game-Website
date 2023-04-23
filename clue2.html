@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="clue2.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Clue 2</h1>
+    <p>
+        Solve the following question
+    </p>
+ <p id="quest"></p> 
+ <p>
+    Select the correct option
+</p>
+    <a href="#" target="_blank"><p id="opt1"></p></a>
+    <a href="clue3.html" target="_blank"><p id="opt2"></p></a>
+    <a href="#" target="_blank"><p id="opt3"></p></a>
+    <a href="#" target="_blank"><p id="opt4"></p></a>
+    <div id="time-frame">Time elapsed:0</div>
+    <a href="clue1.html" target="_blank"><p class="start-over">Start Over</p></a>
+    <script>
+        console.log('hello')
+        let s1=Math.round(Math.random()*10)
+        let s2=Math.round(Math.random()*10)+1
+        let s3=Math.round(Math.random()*10)
+        let s4=Math.round(Math.random()*10)
+        let ans=(s1/s2)+(s3*s4)-1
+        var question=''
+        quest=document.getElementById('quest')
+        quest.innerText=s1+' / '+s2+' + '+s3+' * '+s4+' - '+' 1 ';
+        document.getElementById("opt1").innerText=ans-1;
+        document.getElementById("opt2").innerText=ans;
+        document.getElementById("opt3").innerText=ans+1;
+        document.getElementById("opt4").innerText=ans+10;
+
+        let timeset = 0;
+        window.addEventListener("load", MyFunction());
+        function MyFunction() {
+            var timeUpdate = document.getElementById('time-frame')
+            setInterval(() => {
+                timeset++;
+                timeUpdate.innerText = 'Time elapsed: ' + timeset;
+            }, 100);
+        }
+    </script>
+</body>
+</html>

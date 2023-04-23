@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="clue4.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <script src="clue4.js"></script>
+</head>
+
+<body onload="generate()">
+    <h1>clue 4</h1>
+    <div id="user-input" class="inline">
+        <input type="text" id="submit" placeholder="Captcha code" />
+    </div>
+
+    <div class="inline" onclick="generate()">
+        <i class="fas fa-sync"></i>
+    </div>
+
+    <div id="image" class="inline" selectable="False">
+    </div>
+    <input type="submit" id="btn" onclick="printmsg()" />
+
+    <p id="key"></p>
+    <div id="time-frame">Time elapsed:0</div>
+    <a href="clue1.html" target="_blank"><p class="start-over">Start Over</p></a>
+
+
+    <script>
+        let timeset = 0;
+        window.addEventListener("load", MyFunction());
+        function MyFunction() {
+            var timeUpdate = document.getElementById('time-frame')
+            setInterval(() => {
+                timeset++;
+                timeUpdate.innerText = 'Time elapsed: ' + timeset;
+            }, 100);
+        }
+    </script>
+</body>
+
+</html>

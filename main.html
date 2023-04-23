@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        Welcome to the interactive treasure hunt website
+        Come back here once you are asked to open this treasure box
+    </h1>
+    <a href="clue1.html" target="_blank">Click here for clue</a>
+    <img src="treasure_box.png" alt="treasure box">
+    <div class="taking_key">
+        Enter key carefully, this box opens only once in 100 years:  <input type="text" id="myText" value="Enter key">
+        <button type="button" onclick="myFunction()">Submit</button>
+        <p id="demo"></p>
+    </div>
+    <div id="winning_display"></div>
+    <script>
+        function myFunction() {
+            var x = document.getElementById("myText").value;
+            if (x === 'pqWasd@01')
+                {
+                    var y = document.getElementById("winning_display");
+                    y.innerText='Congratulations you won!'
+                }
+            else
+                console.log('Oops Try again');
+        }
+    </script>
+</body>
+
+</html>

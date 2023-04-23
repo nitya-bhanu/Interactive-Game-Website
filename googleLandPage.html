@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <meta
+      name="google-signin-client_id"
+      content="YOUR_CLIENT_ID.apps.googleusercontent.com"
+    />
+    <style>
+      body {
+        background-color: rgb(206, 206, 120);
+        color: rgb(155, 73, 73);
+      }
+
+      h1 {
+        text-align: center;
+      }
+    </style>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <h1>Welcome to e-litmus Gaming website</h1>
+    <div id="my-signin2" onclick="loginRedirect()">Sign in</div>
+    <script>
+      const url = "http://localhost:3005";
+      function loginRedirect() {
+        window.open(url + "/auth/google/callback", "_self");
+      }
+      function getUser() {
+        axios
+          .get(url+"/auth/loginStatus",{withCredentials:true})
+          .then((response) => {
+            const users = response.data;
+            console.log(`GET users`, users);
+          })
+          .catch((error) => console.error(error));
+      }
+      getUser()
+    </script>
+
+    <script
+      src="https://apis.google.com/js/platform.js?onload=renderButton"
+      async
+      defer
+    ></script>
+  </body>
+</html>

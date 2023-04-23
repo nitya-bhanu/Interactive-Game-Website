@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="clue1.css">
+</head>
+<body>
+    <h1>Clue 1</h1>
+    <p class="heading_quesstion">Who sang 'Hotline Bling' 
+       <br> Select their correct insta user name
+    </p>
+    <a href="clue2.html" target="_blank">Champagnepapi</a>
+    <a href="deadend1.html" target="_blank">Drakehere</a>
+    <a href="#" target="_blank">Kanyewest</a>
+    <a href="#" target="_blank">snoopdogg</a>
+    <div id="time-frame">Time elapsed:0</div>
+    <a href="clue1.html" target="_blank"><p class="start-over">Start Over</p></a>
+    <script>
+        let timeset = 0;
+        window.addEventListener("load", MyFunction());
+        function MyFunction() {
+            var timeUpdate = document.getElementById('time-frame')
+            setInterval(() => {
+                timeset++;
+                timeUpdate.innerText = 'Time elapsed: ' + timeset;
+            }, 100);
+        }
+    </script>
+</body>
+</html>
