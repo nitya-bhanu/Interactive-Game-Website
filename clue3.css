@@ -15,6 +15,10 @@ a{
     font-size: 20px;
     margin:10px;
 }
+a:hover{
+    cursor: pointer;
+    color: aliceblue;
+    }
 #time-frame{
     position: absolute;
     width: 30vw;

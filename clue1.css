@@ -29,3 +29,7 @@ a{
 p.start-over{
     text-align: center;
 }
+a:hover{
+cursor: pointer;
+color: aliceblue;
+}
