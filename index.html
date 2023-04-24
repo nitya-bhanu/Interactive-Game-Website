@@ -5,22 +5,18 @@
       content="YOUR_CLIENT_ID.apps.googleusercontent.com"
     />
     <style>
-      body {
-        background-color: rgb(206, 206, 120);
-        color: rgb(155, 73, 73);
-      }
-
-      h1 {
-        text-align: center;
-      }
+     
     </style>
+    <link rel="stylesheet" href="index.css">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
 
   <body>
     <h1>Welcome to e-litmus Gaming website</h1>
-    <input id="username" type="text" placeholder="Enter Username" />
-    <div id="sign" onclick="signin()">Sign in</div>
+    <div class="input_form">
+      <input id="username" type="text" placeholder="Enter Username" />
+      <div id="sign" onclick="signin()">Sign in</div>
+    </div>
 
     <a class="admin_sign_in" href="admin.html">Admin Sign In</p>
     <script>
