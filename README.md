@@ -51,7 +51,7 @@ Results of all the players are displayed there!
 
 ## Tech
 
-Tech Stacks used in studCart:
+Tech Stacks used in the project:
 - [Vscode] - awesome text editor
 - [node.js] - evented I/O for the backend 
 - [Express] - fast node.js network app framework [@tjholowaychuk]
