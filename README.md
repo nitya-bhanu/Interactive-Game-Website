@@ -5,7 +5,7 @@ The following game evaluates various soft skills of player and finally provides 
 
 
 ## Website Link
-https://nitya-bhanu.github.io/elitmusFrontEnd/
+[https://nitya-bhanu.github.io/elitmusFrontEnd/](https://nitya-bhanu.github.io/Interactive-Game-Website/)
 
 ## Features
 
