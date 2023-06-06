@@ -1,6 +1,6 @@
-# elitmusFrontEnd
+# FrontEnd
 ### please note that server might sleep if not pinged regularly so wait for a while and send requests again and again to play the game, inconvenience is regretted
-## e-litmus Puzzle Game
+## Puzzle Game
 The following game evaluates various soft skills of player and finally provides the result that is being analysed on the basis of several levels being presented in the form of clues
 
 
